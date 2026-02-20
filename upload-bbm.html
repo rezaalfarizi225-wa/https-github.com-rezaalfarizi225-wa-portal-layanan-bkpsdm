@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload Struk BBM ASN</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="stylebbm.css">
+
+    <!-- OCR Library -->
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+
+    <h2>Upload Struk BBM ASN</h2>
+
+    <label>Nama ASN</label>
+    <input type="text" id="nama" placeholder="Masukkan Nama">
+
+    <label>NIP</label>
+    <input type="text" id="nip" placeholder="Masukkan NIP">
+
+    <label>Upload Foto Struk</label>
+    <input type="file" id="imageInput" accept="image/*">
+
+    <img id="preview">
+
+    <button id="prosesBtn">Proses Struk</button>
+
+    <div class="hasil" id="hasilOCR"></div>
+
+    <button id="kirimBtn">Kirim ke Bendahara</button>
+
+</div>
+
+<button onclick="window.location.href='index.html'">Kembali ke Portal</button>
+
+<!-- JavaScript -->
+<script src="script.js"></script>
+
+</body>
+</html>

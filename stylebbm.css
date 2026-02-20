@@ -1,0 +1,130 @@
+/* ================= GLOBAL ================= */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #e9f2ff, #f5f7fa);
+    margin: 0;
+    padding: 0;
+    color: #1f2933;
+}
+
+/* ================= CONTAINER ================= */
+.container {
+    max-width: 520px;
+    margin: 60px auto;
+    background: #ffffff;
+    padding: 30px 28px;
+    border-radius: 14px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+    animation: fadeIn 0.4s ease;
+}
+
+/* Animasi masuk */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ================= JUDUL ================= */
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #0a3d62;
+}
+
+/* ================= LABEL ================= */
+label {
+    margin-top: 14px;
+    display: block;
+    font-weight: 500;
+}
+
+/* ================= INPUT ================= */
+input[type="text"],
+input[type="file"] {
+    width: 100%;
+    padding: 10px 12px;
+    margin-top: 6px;
+    border-radius: 8px;
+    border: 1px solid #d0d7de;
+    transition: all 0.2s ease;
+    font-size: 0.95rem;
+}
+
+input:focus {
+    outline: none;
+    border-color: #1e6091;
+    box-shadow: 0 0 0 3px rgba(30, 96, 145, 0.15);
+}
+
+/* ================= PREVIEW GAMBAR ================= */
+img {
+    width: 100%;
+    margin-top: 18px;
+    border-radius: 10px;
+    display: none;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+/* ================= HASIL OCR ================= */
+.hasil {
+    margin-top: 18px;
+    background: #f1f5f9;
+    padding: 14px;
+    border-radius: 10px;
+    min-height: 70px;
+    white-space: pre-wrap;
+    font-size: 0.9rem;
+    border: 1px solid #e2e8f0;
+}
+
+/* ================= BUTTON BASE ================= */
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 18px;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Tombol Proses */
+#prosesBtn {
+    background: #1e6091;
+    color: #ffffff;
+}
+
+#prosesBtn:hover {
+    background: #0a3d62;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+}
+
+/* Tombol Kirim */
+#kirimBtn {
+    background: #38b000;
+    color: #ffffff;
+}
+
+#kirimBtn:hover {
+    background: #2d8600;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+}
+
+/* Efek ditekan */
+button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 600px) {
+    .container {
+        margin: 30px 15px;
+        padding: 22px;
+    }
+}
