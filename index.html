@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Layanan BKPSDM</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+<div class="logo">
+    <img src="logo_tegal.png" alt="Logo BKPSDM" class="nav-logo">
+    <span>BKPSDM</span>
+</div>        <ul class="nav-links">
+            <li><a href="#">Beranda</a></li>
+            <li><a href="#layanan">Layanan</a></li>
+            <li><a href="#alur">Alur</a></li>
+            <li><a href="#faq">FAQ</a></li>
+        </ul>
+    </div>
+</nav>
+
+<header class="hero">
+    <h1>Portal Layanan BKPSDM</h1>
+    <p>Pusat layanan administrasi Magang, PKL, dan Penelitian</p>
+    <a href="#alur" class="btn-cta hero-btn">Pelajari Alur <i class="fa-solid fa-arrow-right"></i></a>
+</header>
+
+<section class="features" id="layanan">
+
+    <div class="card">
+        <i class="fa-solid fa-user-graduate card-icon"></i>
+        <h3>Pendaftaran Magang / PKL</h3>
+        <p>Pengajuan praktik kerja lapangan dan magang.</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSelBC14m-ndI0ViiT_1qgRovXxFnP6coN-3sXq4C53I3GrNGA/viewform?usp=header" target="_blank" class="btn-primary">
+            Isi Form
+        </a>
+    </div>
+
+    <div class="card">
+        <i class="fa-solid fa-flask card-icon"></i>
+        <h3>Pendaftaran Penelitian</h3>
+        <p>Pengajuan izin penelitian untuk keperluan akademik dan instansi.</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSelBC14m-ndI0ViiT_1qgRovXxFnP6coN-3sXq4C53I3GrNGA/viewform?usp=header" target="_blank" class="btn-primary">
+            Isi Form
+        </a>
+    </div>
+
+    <div class="card">
+        <i class="fa-solid fa-magnifying-glass card-icon"></i>
+        <h3>Cek Status Pengajuan</h3>
+        <p>Melihat status verifikasi pengajuan.</p>
+        <a href="cekpengajuan.html" class="btn-secondary">
+            Cek Status
+        </a>
+    </div>
+    
+</section>
+
+<section class="info" id="alur">
+    <h2>Alur Pengajuan (Klik untuk Detail)</h2>
+    <div class="steps-container">
+        <div class="step" onclick="showDetail(1)">
+            <span class="step-num">1</span>
+            <p>Isi Form Online</p>
+        </div>
+        <i class="fa-solid fa-chevron-right step-arrow"></i>
+        <div class="step" onclick="showDetail(2)">
+            <span class="step-num">2</span>
+            <p>Upload Dokumen</p>
+        </div>
+        <i class="fa-solid fa-chevron-right step-arrow"></i>
+        <div class="step" onclick="showDetail(3)">
+            <span class="step-num">3</span>
+            <p>Verifikasi Admin</p>
+        </div>
+        <i class="fa-solid fa-chevron-right step-arrow"></i>
+        <div class="step" onclick="showDetail(4)">
+            <span class="step-num">4</span>
+            <p>Notifikasi Selesai</p>
+        </div>
+    </div>
+</section>
+
+<div id="alurModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <h3 id="modalTitle">Judul Alur</h3>
+        <p id="modalDescription">Penjelasan lengkap akan muncul di sini.</p>
+    </div>
+</div>
+
+<section class="faq-section" id="faq">
+    <h2>Pertanyaan Sering Diajukan (FAQ)</h2>
+    <div class="faq-container">
+        <div class="faq-item">
+            <button class="faq-question">Berapa lama proses verifikasi dokumen? <i class="fa-solid fa-chevron-down"></i></button>
+            <div class="faq-answer">
+                <p>Proses verifikasi biasanya memakan waktu 2-3 hari kerja setelah dokumen dinyatakan lengkap oleh tim admin kami.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">Dokumen apa saja yang perlu disiapkan? <i class="fa-solid fa-chevron-down"></i></button>
+            <div class="faq-answer">
+                <p>Untuk magang, Anda memerlukan Surat Pengantar Kampus dan Proposal. Untuk penelitian, diperlukan izin dari instansi terkait dan KTP.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <p>© 2026 BKPSDM Kabupaten Tegal</p>
+    <p>Email: bkpsdm@email.go.id</p>
+</footer>
+
+<script>
+    
+    window.addEventListener('DOMContentLoaded', () => {
+    // 1. Animasi untuk Hero Section (H1, P, dan Tombol)
+    setTimeout(() => {
+        document.querySelector('.hero h1').classList.add('appear');
+    }, 200);
+    
+    setTimeout(() => {
+        document.querySelector('.hero p').classList.add('appear');
+    }, 400);
+
+    setTimeout(() => {
+        document.querySelector('.hero .btn-cta').classList.add('appear');
+    }, 600);
+
+    // 2. Animasi untuk Cards (Muncul satu per satu/Stagger)
+    const cards = document.querySelectorAll('.card');
+    cards.forEach((card, index) => {
+        setTimeout(() => {
+            card.classList.add('appear');
+        }, 800 + (index * 200)); // Jeda 200ms antar kartu
+    });
+
+    // 3. Munculkan elemen lainnya saat scroll (Opsional tapi bagus)
+    const observerOptions = {
+        threshold: 0.2
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('appear');
+            }
+        });
+    }, observerOptions);
+
+    // Daftarkan elemen yang ingin dimunculkan saat scroll
+    document.querySelectorAll('.info h2, .steps-container, .faq-section').forEach(el => {
+        observer.observe(el);
+    });
+});
+
+    // Navbar Scroll Effect
+    window.addEventListener('scroll', function() {
+        const nav = document.querySelector('.navbar');
+        if (window.scrollY > 50) {
+            nav.classList.add('scrolled');
+        } else {
+            nav.classList.remove('scrolled');
+        }
+    });
+
+    // FAQ Accordion
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', () => {
+            const active = document.querySelector('.faq-question.active');
+            if(active && active !== question ) {
+                active.classList.toggle('active');
+                active.nextElementSibling.style.maxHeight = 0;
+            }
+            question.classList.toggle('active');
+            const answer = question.nextElementSibling;
+            if(question.classList.contains('active')){
+                answer.style.maxHeight = answer.scrollHeight + "px";
+            } else {
+                answer.style.maxHeight = 0;
+            }
+        });
+    });
+
+    const alurData = {
+    1: {
+        title: "Langkah 1: Isi Form Online",
+        desc: "Pilih jenis layanan (Magang atau Penelitian) pada tombol di atas, lalu isi data diri dan data kampus dengan benar pada Google Form yang disediakan."
+    },
+    2: {
+        title: "Langkah 2: Upload Dokumen",
+        desc: "Siapkan file PDF scan Surat Pengantar dari Kampus/Sekolah dan Proposal kegiatan. Unggah pada bagian akhir formulir pendaftaran."
+    },
+    3: {
+        title: "Langkah 3: Verifikasi Admin",
+        desc: "Tim BKPSDM akan memeriksa kelengkapan berkas Anda dalam waktu 2-3 hari kerja. Pastikan nomor WhatsApp/Email aktif untuk menerima update."
+    },
+    4: {
+        title: "Langkah 4: Notifikasi Selesai",
+        desc: "Jika disetujui, Anda akan menerima surat balasan resmi yang dapat diunduh atau diambil langsung di kantor sesuai instruksi yang diberikan."
+    }
+};
+
+function showDetail(stepId) {
+    const modal = document.getElementById('alurModal');
+    document.getElementById('modalTitle').innerText = alurData[stepId].title;
+    document.getElementById('modalDescription').innerText = alurData[stepId].desc;
+    modal.style.display = "block";
+}
+
+function closeModal() {
+    document.getElementById('alurModal').style.display = "none";
+}
+
+// Menutup modal jika pengguna mengklik area di luar kotak putih
+window.onclick = function(event) {
+    const modal = document.getElementById('alurModal');
+    if (event.target == modal) {
+        closeModal();
+    }
+}
+
+</script>
+
+</body>
+</html>
