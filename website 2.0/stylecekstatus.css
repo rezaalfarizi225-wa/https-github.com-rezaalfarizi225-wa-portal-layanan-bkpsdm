@@ -1,0 +1,237 @@
+:root { 
+    --primary: #2563eb; 
+    --primary-hover: #1d4ed8;
+    --bg: #f8fafc; 
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --white: #ffffff;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body { 
+    font-family: 'Plus Jakarta Sans', sans-serif; 
+    background: radial-gradient(circle at top right, #e2e8f0, #f8fafc);
+    min-height: 100vh;
+    display: flex; 
+    align-items: center;
+    justify-content: center; 
+    padding: 20px; 
+    color: var(--text-main);
+}
+
+.card { 
+    background: var(--white); 
+    padding: 2.5rem; 
+    border-radius: 24px; 
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.05), 0 10px 10px -5px rgba(0,0,0,0.02);
+    width: 100%; 
+    max-width: 480px;
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    transition: transform 0.3s ease;
+}
+
+.header-section { text-align: center; margin-bottom: 2rem; }
+
+.logo-placeholder {
+    width: 60px;
+    height: 60px;
+    background: var(--primary);
+    border-radius: 16px;
+    margin: 0 auto 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+    box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3);
+}
+
+h2 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; letter-spacing: -0.02em; }
+p.subtitle { color: var(--text-muted); font-size: 0.95rem; }
+
+.form-group { margin-bottom: 1.25rem; }
+
+label { 
+    display: block; 
+    font-size: 0.875rem; 
+    font-weight: 600; 
+    color: var(--text-main); 
+    margin-bottom: 0.5rem; 
+    margin-left: 4px;
+}
+
+input { 
+    width: 100%; 
+    padding: 14px 16px; 
+    background: #f1f5f9;
+    border: 2px solid transparent; 
+    border-radius: 12px; 
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    outline: none;
+}
+
+input:focus { 
+    background: var(--white);
+    border-color: var(--primary); 
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+
+button { 
+    width: 100%; 
+    padding: 14px; 
+    background: var(--primary); 
+    color: white; 
+    border: none; 
+    border-radius: 12px; 
+    font-weight: 700; 
+    font-size: 1rem;
+    cursor: pointer; 
+    transition: all 0.3s ease; 
+    margin-top: 1rem;
+}
+
+button:hover { 
+    background: var(--primary-hover); 
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+button:active { transform: translateY(0); }
+button:disabled { background: #cbd5e1; cursor: not-allowed; transform: none; }
+
+#resultBox { 
+    margin-top: 2rem; 
+    padding: 1.5rem; 
+    border-radius: 16px; 
+    background: #f8fafc;
+    border: 1px dashed #e2e8f0;
+    display: none; 
+    animation: slideUp 0.4s ease-out;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.result-item { margin-bottom: 12px; }
+.result-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); font-weight: 700; }
+.result-value { font-weight: 600; font-size: 1rem; color: var(--text-main); }
+
+.status-pill { 
+    display: inline-flex; 
+    align-items: center;
+    padding: 6px 16px; 
+    border-radius: 10px; 
+    font-size: 0.85rem; 
+    font-weight: 700; 
+    margin-top: 4px; 
+}
+
+.menunggu { background: #fef3c7; color: #92400e; }
+.diterima { background: #dcfce7; color: #166534; }
+.ditolak { background: #fee2e2; color: #991b1b; }
+
+.loader { 
+    border: 3px solid #f3f3f3; 
+    border-top: 3px solid var(--primary); 
+    border-radius: 50%; 
+    width: 24px; height: 24px; 
+    animation: spin 0.8s linear infinite; 
+    display: none; 
+    margin: 20px auto; 
+}
+
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+.footer-note { 
+    text-align: center; 
+    margin-top: 1.5rem; 
+    font-size: 0.75rem; 
+    color: var(--text-muted); 
+}
+
+/* Ganti .logo-placeholder dengan ini */
+.logo-instansi {
+    width: auto;
+    height: 85px; /* Sesuaikan tinggi logo agar pas */
+    margin-bottom: 1.5rem;
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1)); /* Memberikan efek bayangan lembut pada logo */
+}
+
+/* Tambahan: Pastikan header section tetap rata tengah */
+.header-section {
+    text-align: center;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Area kontainer background */
+.area {
+    background: #f4f7fb;  
+    background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);  
+    width: 100%;
+    height: 100vh;
+    position: fixed; /* Tetap di belakang saat di-scroll */
+    top: 0;
+    left: 0;
+    z-index: -1; /* Di belakang semua elemen */
+}
+
+.circles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.circles li {
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background: rgba(30, 96, 145, 0.1); /* Warna biru transparan sesuai tema BKPSDM */
+    animation: animate 25s linear infinite;
+    bottom: -150px;
+}
+
+/* Variasi ukuran dan posisi lingkaran */
+.circles li:nth-child(1) { left: 25%; width: 80px; height: 80px; animation-delay: 0s; }
+.circles li:nth-child(2) { left: 10%; width: 20px; height: 20px; animation-delay: 2s; animation-duration: 12s; }
+.circles li:nth-child(3) { left: 70%; width: 20px; height: 20px; animation-delay: 4s; }
+.circles li:nth-child(4) { left: 40%; width: 60px; height: 60px; animation-delay: 0s; animation-duration: 18s; }
+.circles li:nth-child(5) { left: 65%; width: 20px; height: 20px; animation-delay: 0s; }
+.circles li:nth-child(6) { left: 75%; width: 110px; height: 110px; animation-delay: 3s; }
+.circles li:nth-child(7) { left: 35%; width: 150px; height: 150px; animation-delay: 7s; }
+.circles li:nth-child(8) { left: 50%; width: 25px; height: 25px; animation-delay: 15s; animation-duration: 45s; }
+.circles li:nth-child(9) { left: 20%; width: 15px; height: 15px; animation-delay: 2s; animation-duration: 35s; }
+.circles li:nth-child(10) { left: 85%; width: 150px; height: 150px; animation-delay: 0s; animation-duration: 11s; }
+
+/* Keyframes untuk animasi melayang dan berputar */
+@keyframes animate {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+    100% {
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+}
+
+/* Memastikan body tetap transparan agar background terlihat */
+body {
+    background-color: transparent !important;
+}

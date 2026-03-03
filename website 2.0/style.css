@@ -1,173 +1,371 @@
-/* ================= GLOBAL STYLE ================= */
+/* ================= RESET & BASE ================= */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #f5f7fa;
+    background-color: #f4f7fb;
     color: #1f2933;
     line-height: 1.6;
 }
 
+/* ================= NAVBAR ================= */
+.navbar {
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: 900;
+    font-size: 1.4rem;
+    color: #1e6091;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #1f2933;
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #1e6091;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
 /* ================= HERO ================= */
 .hero {
-    background: linear-gradient(135deg, #0a3d62, #1e6091);
+    background: linear-gradient(135deg, rgba(10, 61, 98, 0.9), rgba(30, 96, 145, 0.8)), 
+                url('1772467358238.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; 
     color: #ffffff;
     text-align: center;
-    padding: 80px 10px;
+    padding: 130px 20px;
 }
 
 .hero h1 {
-    font-size: 1,5rem;
-    margin-bottom: 10px;
+    font-size: 2.8rem;
+    font-weight: 900;
+    margin-bottom: 15px;
 }
 
 .hero p {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     opacity: 0.9;
+    margin-bottom: 30px;
 }
 
-/* ================= FEATURES ================= */
+.btn-cta {
+    background-color: #45e6e6;
+    color: #023047;
+    padding: 14px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    transition: 0.3s;
+}
+
+.btn-cta:hover {
+    background-color: #43ffb4;
+    transform: translateY(-3px);
+}
+
+/* ================= FEATURES & CARDS ================= */
 .features {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
-    padding: 60px 10%;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: -50px auto 0; 
+    padding: 0 20px 70px;
 }
 
 .card {
     background-color: #ffffff;
-    padding: 30px 25px;
-    border-radius: 12px;
+    padding: 40px 30px;
+    border-radius: 20px;
     text-align: center;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards;
+}
+
+.card:hover {
+    transform: translateY(-10px);
 }
 
 .card-icon {
-    font-size: 40px;
+    font-size: 50px;
     color: #1e6091;
-    margin-bottom: 15px;
-}
-
-.card h3 {
-    margin-bottom: 10px;
-}
-
-.card p {
-    font-size: 0.95rem;
     margin-bottom: 20px;
 }
 
-/* Tombol Umum */
-.btn {
-    display: inline-block;
-    padding: 10px 18px;
-    background-color: #1e6091;
-    color: #ffffff;
+.card h3 {
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.btn-primary, .btn-secondary {
+    display: block;
+    padding: 12px;
+    border-radius: 10px;
     text-decoration: none;
-    border-radius: 6px;
-    font-size: 0.9rem;
+    font-weight: 600;
+    margin-top: 20px;
+    transition: 0.2s;
 }
 
-.btn:hover {
-    background-color: #0a3d62;
-}
+.btn-primary { background: #1e6091; color: white; }
+.btn-secondary { background: #38b000; color: white; }
 
-/* ================= INFO SECTION ================= */
+/* ================= ALUR ================= */
 .info {
-    background-color: #ffffff;
-    padding: 50px 15%;
+    background: #fff;
+    padding: 80px 20px;
     text-align: center;
 }
 
-.info h2 {
+.info h2 { font-weight: 900; margin-bottom: 50px; font-size: 2rem; }
+
+.steps-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.step {
+    background: #f0f7ff;
+    padding: 30px 20px;
+    border-radius: 15px;
+    flex: 1;
+    min-width: 180px;
+}
+
+.step-num {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: #1e6091;
+    color: white;
+    border-radius: 50%;
+    line-height: 40px;
+    font-weight: 900;
     margin-bottom: 15px;
 }
 
-/* ================= FORM ================= */
-.form-section {
-    padding: 60px 10%;
+.step-arrow {
+    color: #cbd5e0;
+    font-size: 24px;
 }
 
-.form-section h2 {
-    text-align: center;
-    margin-bottom: 30px;
+/* ================= FAQ ACCORDION ================= */
+.faq-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 80px 20px;
 }
 
-.form {
-    max-width: 500px;
-    margin: auto;
-    background-color: #ffffff;
-    padding: 30px;
+.faq-section h2 { text-align: center; margin-bottom: 40px; font-weight: 900; }
+
+.faq-item {
+    background: #fff;
+    margin-bottom: 15px;
     border-radius: 10px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
 }
 
-.form-group {
-    margin-bottom: 18px;
-}
-
-label {
-    display: block;
-    margin-bottom: 6px;
-    font-weight: 500;
-}
-
-input {
+.faq-question {
     width: 100%;
-    padding: 10px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-}
-
-
-
-/* Styling Umum untuk Tombol */
-.btn-primary, .btn-secondary {
-    display: inline-block;
-    padding: 12px 28px;
-    text-decoration: none;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 500;
-    font-size: 1rem;
-    border-radius: 50px; /* Membuat tombol lonjong/rounded */
-    transition: all 0.3s ease; /* Transisi halus untuk semua perubahan */
-    text-align: center;
+    padding: 20px;
+    background: none;
     border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 600;
     cursor: pointer;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    margin-top: 15px;
+    text-align: left;
 }
 
-/* Tombol Primary (Pendaftaran Magang & Penelitian) */
-.btn-primary {
-    background: linear-gradient(135deg, #3498db, #2980b9);
-    color: white;
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background: #fafafa;
 }
 
-.btn-primary:hover {
-    background: linear-gradient(135deg, #2980b9, #3498db);
-    transform: translateY(-3px); /* Tombol sedikit naik ke atas */
-    box-shadow: 0 8px 20px rgba(52, 152, 219, 0.4);
+.faq-answer p { padding: 0 20px 20px; color: #4a5568; }
+
+.faq-question.active i { transform: rotate(180deg); }
+
+/* ================= FOOTER ================= */
+.footer { background: #0a3d62; color: white; padding: 40px; text-align: center; }
+
+@keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2rem; }
+    .step-arrow { transform: rotate(90deg); margin: 10px 0; }
+    .steps-container { flex-direction: column; }
 }
 
-/* Tombol Secondary (Upload BBM) */
-.btn-secondary {
-    background: linear-gradient(135deg, #2ecc71, #27ae60);
-    color: white;
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.btn-secondary:hover {
-    background: linear-gradient(135deg, #27ae60, #2ecc71);
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(46, 204, 113, 0.4);
+.nav-logo {
+    height: 40px; 
+    width: auto;
 }
 
-/* Efek Klik (saat ditekan) */
-.btn-primary:active, .btn-secondary:active {
-    transform: translateY(1px);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+body {
+    background-image: radial-gradient(#d1d9e6 0.5px, transparent 0.5px);
+    background-size: 20px 20px; 
+    background-color: #f4f7fb;
 }
+
+.hero h1, .hero p, .hero .btn-cta, 
+.card, .info h2, .steps-container, .faq-section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.appear {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+.navbar {
+    animation: fadeInDown 1s ease-in-out;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.btn-cta:hover, .btn-primary:hover, .btn-secondary:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2); 
+    filter: brightness(1.1); 
+}
+
+.btn-cta:active {
+    transform: scale(0.95);
+}
+
+.step {
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.step:hover {
+    background: #35afb1;
+    transform: scale(1.05);
+}
+
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 30px;
+    border-radius: 15px;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    position: relative;
+    animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.7); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.close-btn {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 28px;
+    cursor: pointer;
+    color: #aaa;
+}
+
+.close-btn:hover { color: #000; }
+
+#modalTitle { color: #1e6091; margin-bottom: 15px; font-weight: 900; }
