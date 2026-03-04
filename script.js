@@ -75,7 +75,7 @@ const alurData = {
     },
     2: {
         title: "Langkah 2: Upload Dokumen",
-        desc: "Siapkan file PDF scan Surat Pengantar dari Kampus/Sekolah, Sertakan Proposal Kegiatan Jika Tujuannya adalah Penelitian. Unggah pada bagian akhir formulir pendaftaran."
+        desc: "Siapkan file PDF scan Surat Pengantar dari Kampus/Sekolah, Jika Tujuannya adalah Penelitian Sertakan Proposal Kegiatan. Unggah pada bagian akhir formulir pendaftaran."
     },
     3: {
         title: "Langkah 3: Verifikasi Admin",
