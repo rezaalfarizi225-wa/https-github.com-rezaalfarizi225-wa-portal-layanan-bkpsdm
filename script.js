@@ -71,11 +71,11 @@ faqQuestions.forEach(question => {
 const alurData = {
     1: {
         title: "Langkah 1: Isi Form Online",
-        desc: "Pilih jenis layanan (Magang atau Penelitian) pada tombol di atas, lalu isi data diri dan data kampus dengan benar pada Google Form yang disediakan."
+        desc: "Pilih jenis layanan (Magang, Pkl atau Penelitian) pada tombol di atas, lalu isi data diri dan data kampus dengan benar pada Google Form yang disediakan."
     },
     2: {
         title: "Langkah 2: Upload Dokumen",
-        desc: "Siapkan file PDF scan Surat Pengantar dari Kampus/Sekolah dan Proposal kegiatan. Unggah pada bagian akhir formulir pendaftaran."
+        desc: "Siapkan file PDF scan Surat Pengantar dari Kampus/Sekolah, Sertakan Proposal Kegiatan Jika Tujuannya adalah Penelitian. Unggah pada bagian akhir formulir pendaftaran."
     },
     3: {
         title: "Langkah 3: Verifikasi Admin",
@@ -83,7 +83,7 @@ const alurData = {
     },
     4: {
         title: "Langkah 4: Notifikasi Selesai",
-        desc: "Jika disetujui, Anda akan menerima surat balasan resmi yang dapat diunduh atau diambil langsung di kantor sesuai instruksi yang diberikan."
+        desc: "Jika disetujui, Anda akan menerima Notifikasi Melalui Email, Dan Surat Balasan resmi dapat diambil langsung di kantor sesuai instruksi yang diberikan."
     }
 };
 

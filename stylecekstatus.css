@@ -18,7 +18,7 @@ body {
     justify-content: center; 
     padding: 20px; 
     color: var(--text-main);
-}
+   }
 
 .card { 
     background: var(--white); 
@@ -29,6 +29,7 @@ body {
     max-width: 480px;
     border: 1px solid rgba(226, 232, 240, 0.8);
     transition: transform 0.3s ease;
+    
 }
 
 .header-section { text-align: center; margin-bottom: 2rem; }
@@ -131,7 +132,7 @@ button:disabled { background: #cbd5e1; cursor: not-allowed; transform: none; }
     margin-top: 4px; 
 }
 
-.menunggu { background: #fef3c7; color: #92400e; }
+.menunggu { background: #fef3c7; color: #ced717; }
 .diterima { background: #dcfce7; color: #166534; }
 .ditolak { background: #fee2e2; color: #991b1b; }
 
