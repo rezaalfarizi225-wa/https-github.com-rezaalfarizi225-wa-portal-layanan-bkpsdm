@@ -133,7 +133,7 @@ button:disabled { background: #cbd5e1; cursor: not-allowed; transform: none; }
 }
 
 .menunggu { background: #fef3c7; color: #ced717; }
-.diterima { background: #dcfce7; color: #166534; }
+.disetujui { background: #dcfce7; color: #166534; }
 .ditolak { background: #fee2e2; color: #991b1b; }
 
 .loader { 
@@ -235,4 +235,16 @@ button:disabled { background: #cbd5e1; cursor: not-allowed; transform: none; }
 /* Memastikan body tetap transparan agar background terlihat */
 body {
     background-color: transparent !important;
+}
+
+.menunggu { background: #fef3c7; color: #ced717; }
+.disetujui { background: #dcfce7; color: #166534; }
+.ditolak { background: #fee2e2; color: #991b1b; }
+
+.status-pill {
+    font-weight: 800;
+}
+
+.status-pill {
+    text-transform: uppercase;
 }

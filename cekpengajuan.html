@@ -88,13 +88,13 @@
             const data = await response.json();
 
             const user = data.find(row => 
-                row["Nama Lengkap Perwakilan Peserta"]?.toString().toLowerCase().includes(nama) && 
+                row["Nama Lengkap"]?.toString().toLowerCase().includes(nama) && 
                 row["Nomor Induk Siswa (NIS) / Nomor Induk Mahasiswa (NIM)"]?.toString() === npm
             );
 
             if (user) {
                 resBox.style.display = 'block';
-                document.getElementById('resNama').innerText = user["Nama Lengkap Perwakilan Peserta"];
+                document.getElementById('resNama').innerText = user["Nama Lengkap"];
                 document.getElementById('resKampus').innerText = user["Asal Institusi Pendidikan"];
                 
                 const statusAktif = user["Status Terakhir"] || "Dalam Proses";
@@ -102,10 +102,18 @@
                 resStatus.innerText = statusAktif;
 
                 resStatus.className = 'status-pill';
-                const s = statusAktif.toLowerCase();
-                if(s.includes('terima')) resStatus.classList.add('diterima');
-                else if(s.includes('tolak')) resStatus.classList.add('ditolak');
-                else resStatus.classList.add('menunggu');
+
+const s = statusAktif.toLowerCase();
+
+if (s.includes('setujui') || s.includes('terima')) {
+    resStatus.classList.add('disetujui');
+} 
+else if (s.includes('tolak')) {
+    resStatus.classList.add('ditolak');
+} 
+else {
+    resStatus.classList.add('menunggu');
+}
 
                 document.getElementById('resWaktu').innerText = "Update terakhir: " + (user["Waktu Notifikasi"] || "-");
             } else {
